@@ -1,3 +1,3 @@
 # Adirya
 To visit website :
-https://adirya-qa2nwrw9b-ashnikhars-projects.vercel.app/ 
+https://adirya-few9-pg1i8xgh2-ashnikhars-projects.vercel.app/
