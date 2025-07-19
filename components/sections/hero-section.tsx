@@ -1,59 +1,49 @@
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import { Hero3DBackground } from "@/components/3d/hero-3d-background"
+"use client";
+import DarkVeil from '@/components/darkviel';
 
-export function HeroSection() {
+import Image from "next/image";
+
+export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <Hero3DBackground />
+    <div style={{ width: "100%", height: "100vh", position: "relative" }}>
+      <DarkVeil />
 
-      <div className="relative z-10 container mx-auto px-4 py-24">
-        {/* Main Heading and CTA */}
-        <div className="grid gap-8 md:grid-cols-2 items-center">
-          <div className="space-y-6 text-center md:text-left">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-              <span className="bg-gradient-to-r from-[#008080] to-[#00AAAA] bg-clip-text text-transparent">
-                AI-Powered
-              </span>{" "}
-              Digital Health Transformation
+      <div className="absolute inset-0 flex items-center justify-center px-6 lg:px-20">
+        <div className="max-w-7xl w-full flex flex-col-reverse lg:flex-row items-center justify-between gap-10">
+
+          {/* Left Content */}
+          <div className="text-white text-center lg:text-left space-y-6 max-w-2xl">
+            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
+              AI-Powered Digital <br /> Health Transformation
             </h1>
-            <p className="max-w-[600px] text-lg md:text-xl text-gray-300">
-              Combining cutting-edge AI and innovative technology with trusted human medical expertise—
-              delivering seamless, personalized healthcare designed for everyone.
+            <p className="text-lg md:text-xl text-gray-300">
+              Combining cutting-edge AI and innovative technology with trusted
+              human medical expertise—delivering seamless, personalized
+              healthcare designed for everyone.
             </p>
-            <Button className="inline-flex h-12 items-center justify-center rounded-full bg-gradient-to-r from-[#008080] to-[#00AAAA] px-8 text-base font-medium text-white shadow-lg transition-all hover:scale-105">
-              Request A Demo
-            </Button>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <button className="bg-blue-600 hover:bg-blue-700 transition text-white font-semibold px-6 py-3 rounded-xl">
+                Request A Demo
+              </button>
+              <button className="bg-white/10 hover:bg-white/20 transition text-white font-semibold px-6 py-3 rounded-xl backdrop-blur-md">
+                Contact Us
+              </button>
+            </div>
+          </div>
+
+          {/* Right Image */}
+          <div className="w-full lg:w-1/2 flex justify-center">
+            <Image
+              src="face.webp" // Replace with your image path
+              alt="AI Health"
+              width={500}
+              height={500}
+              className="rounded-3xl shadow-xl"
+            />
           </div>
         </div>
-
-        {/* Image Grid */}
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            { title: "Facial Scan", image: "/face.webp?height=400&width=300" },
-            { title: "Voice Assistant", image: "/voice.webp?height=400&width=300" },
-            { title: "Remote Monitoring", image: "/remote.webp?height=400&width=300" },
-            { title: "Wearable Tech", image: "/wear.webp?height=400&width=300" },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="relative overflow-hidden rounded-2xl aspect-[4/3] group"
-            >
-              <Image
-                src={item.image}
-                alt={item.title}
-                width={400}
-                height={300}
-                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-              <p className="absolute bottom-4 left-4 text-white text-lg font-semibold">
-                {item.title}
-              </p>
-            </div>
-          ))}
-        </div>
       </div>
-    </section>
-  )
+    </div>
+  );
 }
