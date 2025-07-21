@@ -29,7 +29,7 @@ export function SuccessCaseStudySection() {
               <div>
                 <h3 className="text-xl font-semibold text-[#008080] mb-2">Solution</h3>
                 <p className="text-gray-300">
-                  CarePlix implemented an AI-powered claims processing system that automated claim validation, fraud
+                  Adirya Care implemented an AI-powered claims processing system that automated claim validation, fraud
                   detection, and risk assessment.
                 </p>
               </div>

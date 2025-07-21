@@ -19,7 +19,7 @@ export function AboutResponsibilitySection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-            more about CarePlix's responsible approach to healthcare AI
+            more about adirya care's responsible approach to healthcare AI
           </h2>
         </div>
 
