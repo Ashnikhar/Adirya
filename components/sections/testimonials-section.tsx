@@ -1,7 +1,7 @@
 export function TestimonialsSection() {
   const testimonials = [
     {
-      quote: "CarePlix has revolutionized how we deliver healthcare to our patients.",
+      quote: "Adirya has revolutionized how we deliver healthcare to our patients.",
       author: "Dr. Sarah Johnson",
       role: "Chief Medical Officer",
     },
@@ -21,7 +21,7 @@ export function TestimonialsSection() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">What Users Say About CarePlix</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">What Users Say About Adirya</h2>
         </div>
 
         <div className="grid gap-8 md:grid-cols-3">

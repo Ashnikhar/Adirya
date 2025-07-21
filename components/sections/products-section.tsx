@@ -8,17 +8,17 @@ import { motion } from "framer-motion"
 export function ProductsSection() {
   const products = [
     {
-      title: "CarePlix Vitals",
+      title: "Adirya Vitals",
       description: "Advanced vital signs monitoring with AI-powered analysis",
       image: "/placeholder.svg?height=300&width=400",
     },
     {
-      title: "CarePlix Care",
+      title: "Adirya Care",
       description: "Comprehensive care management platform for healthcare providers",
       image: "/placeholder.svg?height=300&width=400",
     },
     {
-      title: "CarePlix AI",
+      title: "Adirya AI",
       description: "Intelligent diagnostic assistance powered by machine learning",
       image: "/placeholder.svg?height=300&width=400",
     },

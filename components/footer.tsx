@@ -68,7 +68,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-500 text-center md:text-left">
-            © 2024 CarePlix Healthcare Pvt Ltd. All rights reserved.
+            © 2024 adiryacare Healthcare Pvt Ltd. All rights reserved.
           </p>
           <div className="flex gap-3">
             <div className="w-9 h-9 bg-gray-800 rounded-full"></div>

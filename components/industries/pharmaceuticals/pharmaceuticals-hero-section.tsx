@@ -44,7 +44,7 @@ export function PharmaceuticalsHeroSection() {
               </span>
             </h1>
             <p className="text-xl text-gray-300">
-              CarePlix's enterprise-level regulated platform for patient engagement helps MedTech gather real-world
+              Adirya's enterprise-level regulated platform for patient engagement helps MedTech gather real-world
               evidence, reduce readmission rates, and build stronger, longer-term relationships with care providers and
               consumers.
             </p>

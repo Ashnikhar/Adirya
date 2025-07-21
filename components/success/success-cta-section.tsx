@@ -9,7 +9,7 @@ export function SuccessCTASection() {
           <div className="space-y-6">
             <h2 className="text-4xl md:text-5xl font-bold text-white">Ready to give it a try?</h2>
             <p className="text-xl text-white/90">
-              Start your POC today with CarePlix Check, our ready-to-use app for healthcare professionals.
+              Start your POC today with Adirya Check, our ready-to-use app for healthcare professionals.
             </p>
             <Button className="bg-white text-purple-600 hover:bg-gray-100 px-8 py-3 text-lg font-semibold">
               Get Started

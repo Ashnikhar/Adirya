@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-export function InsuranceCarePlixSection() {
+export function InsuranceadiryaSection() {
   return (
     <section className="py-20 bg-gray-100">
       <div className="container mx-auto px-4">
@@ -8,7 +8,7 @@ export function InsuranceCarePlixSection() {
           <div className="space-y-6">
             <h2 className="text-4xl font-bold text-black">
               <span className="text-[#008080]">
-                Leverage the Power of TWO with ONE - CarePlix ONE - More Powerful than Ever.
+                Leverage the Power of TWO with ONE - Adiryacare ONE - More Powerful than Ever.
               </span>
             </h2>
             <ul className="space-y-3 text-gray-700">
@@ -33,7 +33,7 @@ export function InsuranceCarePlixSection() {
           <div className="relative">
             <Image
               src="/placeholder.svg?height=400&width=500"
-              alt="CarePlix ONE platform"
+              alt="Adirya Care ONE platform"
               width={500}
               height={400}
               className="rounded-2xl object-cover"

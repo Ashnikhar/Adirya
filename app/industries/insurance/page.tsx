@@ -4,7 +4,7 @@ import { InsuranceHeroSection } from "@/components/industries/insurance/insuranc
 import { InsuranceDataSection } from "@/components/industries/insurance/insurance-data-section"
 import { InsuranceServicesSection } from "@/components/industries/insurance/insurance-services-section"
 import { InsuranceWellnessSection } from "@/components/industries/insurance/insurance-wellness-section"
-import { InsuranceCarePlixSection } from "@/components/industries/insurance/insurance-careplix-section"
+import { InsuranceadiryaSection } from "@/components/industries/insurance/insurance-adirya-section"
 import { CTASection } from "@/components/sections/cta-section"
 
 export default function InsurancePage() {
@@ -15,7 +15,7 @@ export default function InsurancePage() {
       <InsuranceDataSection />
       <InsuranceServicesSection />
       <InsuranceWellnessSection />
-      <InsuranceCarePlixSection />
+      <InsuranceadiryaSection />
       <CTASection />
       <Footer />
     </div>
