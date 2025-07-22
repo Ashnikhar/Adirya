@@ -14,6 +14,8 @@ import { CTASection } from "@/components/sections/cta-section"
 import { Footer } from "@/components/footer"
 import DarkVeil from '@/components/darkviel';
 import { HeroScrollDemo } from "@/components/heroscrolldemo"
+import { BentoGridSecondDemo } from "@/components/BentoGridSecondDemo"
+import { SmoothCursor } from "@/components/smooth-cursor"
 
 
 
@@ -31,6 +33,7 @@ export default function HomePage() {
       <CTASection />
       <MarqueeDemo />
       <HeroScrollDemo />
+      <BentoGridSecondDemo />
 
 
 
