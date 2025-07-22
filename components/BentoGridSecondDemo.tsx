@@ -4,11 +4,11 @@ import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 
 export function BentoGridSecondDemo() {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-16">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-white">
-        Explore Our Offerings 
+    <div className="max-w-7xl mx-auto px-4 py-12">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10 md:mb-16 text-white">
+        Explore Our Offerings
       </h2>
-      <BentoGrid className="md:auto-rows-[22rem] gap-6">
+      <BentoGrid className="md:auto-rows-[22rem] gap-4 md:gap-6">
         {items.map((item, i) => (
           <BentoGridItem
             key={i}
@@ -36,22 +36,22 @@ const BackgroundCard = ({
   title: string;
   description: string;
 }) => (
-  <div className="relative w-full h-full rounded-xl overflow-hidden group">
+  <div className="relative w-full h-56 sm:h-64 md:h-full rounded-xl overflow-hidden group">
     {/* Background */}
     <div
       className="absolute inset-0 w-full h-full bg-cover bg-center transition-all duration-500 group-hover:blur-sm"
       style={{ backgroundImage: `url(${image})` }}
     ></div>
 
-    {/* Title & Description */}
-    <div className="relative z-10 flex flex-col justify-center items-center w-full h-full text-center text-white transition-all duration-500">
-      <h3 className="text-2xl font-semibold">{title}</h3>
-      <p className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-[200px] group-hover:mt-4 text-white text-lg transition-all duration-500 ease-in-out overflow-hidden px-4">
+    {/* Text */}
+    <div className="relative z-10 flex flex-col justify-center items-center w-full h-full text-center text-white transition-all duration-500 px-2 md:px-4">
+      <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">{title}</h3>
+      <p className="opacity-0 group-hover:opacity-100 max-h-0 group-hover:max-h-[200px] mt-0 group-hover:mt-4 text-xs sm:text-sm md:text-lg transition-all duration-500 ease-in-out overflow-hidden">
         {description}
       </p>
     </div>
 
-    {/* Optional Overlay */}
+    {/* Overlay */}
     <div className="absolute inset-0 bg-white/10"></div>
   </div>
 );
@@ -65,14 +65,14 @@ const items = [
     className: "md:col-span-2",
   },
   {
-    title: "Workplace Mental Health ",
+    title: "Workplace Mental Health",
     description:
       "Our mental health programs include stress management workshops, emotional wellness counseling, HR sensitization sessions, and 24/7 confidential telephonic support accessible to all",
     image: "wear.webp",
     className: "md:col-span-1",
   },
   {
-    title: " Nutrition & Sleep ",
+    title: "Nutrition & Sleep",
     description:
       "Adriya encourages better daily habits with expert diet counseling, live healthy cooking demos, practical sleep management tools, and helpful resources for those with irregular routines.",
     image: "image.jpg",

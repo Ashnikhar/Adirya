@@ -32,7 +32,7 @@ export default function HomePage() {
       <HomeAbout />
 
 
-     
+
       <MarqueeDemo />
       <HeroScrollDemo />
       <BentoGridSecondDemo />
@@ -52,7 +52,7 @@ export default function HomePage() {
       <BusinessSection />
       <MediaSection />
       <TestimonialsSection />
-       <CTASection />
+      <CTASection />
       <Footer />
       {/* <SmoothCursor/> */}
     </div>

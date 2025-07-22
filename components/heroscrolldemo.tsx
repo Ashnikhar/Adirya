@@ -20,6 +20,7 @@ export function HeroScrollDemo() {
               instantly measures 16 vital health parameters.
               <br />
               <span className="text-blue-500 font-semibold">Review – Revive – Engage – Motivate</span><br /> Our approach drives measurable outcomes that matter.
+              <br /><br />
             </p>
           </>
         }
