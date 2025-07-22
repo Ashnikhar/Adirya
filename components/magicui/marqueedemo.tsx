@@ -42,35 +42,35 @@ const PartnerCard = ({
   return (
     <figure
       className={cn(
-        "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
+        "relative h-full w-56 sm:w-64 md:w-72 cursor-pointer overflow-hidden rounded-xl border p-3 sm:p-4",
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
+        "flex-shrink-0 mx-2 text-white"
       )}
     >
       <div className="flex flex-row items-center gap-2">
         <img className="rounded-full" width="32" height="32" alt="" src={img} />
         <div className="flex flex-col">
-          <figcaption className="text-sm font-medium dark:text-white">
-            {name}
-          </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
+          <figcaption className="text-sm font-medium">{name}</figcaption>
+          <p className="text-xs font-medium opacity-70">{username}</p>
         </div>
       </div>
-      <blockquote className="mt-2 text-sm">{body}</blockquote>
+      <blockquote className="mt-2 text-xs sm:text-sm opacity-90">{body}</blockquote>
     </figure>
   );
 };
 
 export function MarqueeDemo() {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden space-y-12">
-      <h2 className="text-3xl font-bold dark:text-white mt-12" >Trusted by leading organizations</h2>
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden space-y-8 sm:space-y-12 px-4 text-white">
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mt-8 text-center">
+        Trusted by leading organizations
+      </h2>
       <Marquee pauseOnHover className="[--duration:18s]">
         {partners.map((partner) => (
           <PartnerCard key={partner.username} {...partner} />
         ))}
       </Marquee>
-
       <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 from-background"></div>
       <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 from-background"></div>
     </div>
