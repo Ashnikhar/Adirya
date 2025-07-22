@@ -3,12 +3,15 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { MenuIcon, X, ChevronDown } from "lucide-react"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { usePathname } from "next/navigation"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isIndustriesHovered, setIsIndustriesHovered] = useState(false)
+  const [isSubmenuHovered, setIsSubmenuHovered] = useState(false)
+  const [isIndustriesClicked, setIsIndustriesClicked] = useState(false)
+  const closeTimer = useRef<NodeJS.Timeout | null>(null)
   const pathname = usePathname()
 
   const navItems = [
@@ -43,8 +46,19 @@ export function Header() {
           <div
             key={item.href}
             className="relative"
-            onMouseEnter={() => item.hasSubmenu && setIsIndustriesHovered(true)}
-            onMouseLeave={() => item.hasSubmenu && setIsIndustriesHovered(true)}
+            onMouseEnter={() => {
+              if (item.hasSubmenu) {
+                if (closeTimer.current) clearTimeout(closeTimer.current)
+                setIsIndustriesHovered(true)
+              }
+            }}
+            onMouseLeave={() => {
+              if (item.hasSubmenu) {
+                closeTimer.current = setTimeout(() => {
+                  setIsIndustriesHovered(false)
+                }, 100)
+              }
+            }}
           >
             <Link
               className={`flex items-center gap-1 text-sm font-medium transition-colors ${
@@ -53,14 +67,34 @@ export function Header() {
                   : "text-gray-300 hover:text-[#008080]"
               }`}
               href={item.href}
+              onClick={e => {
+                if (item.hasSubmenu) {
+                  e.preventDefault()
+                  setIsIndustriesClicked((prev) => !prev)
+                  setIsIndustriesHovered(true)
+                }
+              }}
             >
               {item.label}
               {item.hasSubmenu && <ChevronDown className="h-4 w-4" />}
             </Link>
 
             {/* Submenu */}
-            {item.hasSubmenu && isIndustriesHovered && (
-              <div className="absolute top-full left-0 mt-2 w-48 bg-black/95 backdrop-blur-sm border border-gray-800 rounded-lg shadow-lg">
+            {item.hasSubmenu && (isIndustriesHovered || isSubmenuHovered || isIndustriesClicked) && (
+              <div
+                className="absolute top-full left-0 mt-2 w-48 bg-black/95 backdrop-blur-sm border border-gray-800 rounded-lg shadow-lg"
+                onMouseEnter={() => {
+                  if (closeTimer.current) clearTimeout(closeTimer.current)
+                  setIsSubmenuHovered(true)
+                }}
+                onMouseLeave={() => {
+                  closeTimer.current = setTimeout(() => {
+                    setIsSubmenuHovered(false)
+                    setIsIndustriesHovered(false)
+                    setIsIndustriesClicked(false)
+                  }, 100)
+                }}
+              >
                 {item.submenu?.map((subItem) => (
                   <Link
                     key={subItem.href}
@@ -70,6 +104,11 @@ export function Header() {
                         ? "text-[#008080] bg-gray-800/50"
                         : "text-gray-300 hover:text-[#008080] hover:bg-gray-800/50"
                     }`}
+                    onClick={() => {
+                      setIsIndustriesClicked(false)
+                      setIsIndustriesHovered(false)
+                      setIsSubmenuHovered(false)
+                    }}
                   >
                     {subItem.label}
                   </Link>

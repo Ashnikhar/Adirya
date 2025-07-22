@@ -3,7 +3,7 @@ import DarkVeil from '@/components/darkviel';
 
 import Image from "next/image";
 
-export default function HeroSection() {
+export default function   HeroSection() {
   return (
     <div style={{ width: "100%", height: "100vh", position: "relative" }}>
       <DarkVeil />
@@ -14,12 +14,11 @@ export default function HeroSection() {
           {/* Left Content */}
           <div className="text-white text-center lg:text-left space-y-6 max-w-2xl">
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
-              AI-Powered Digital <br /> Health Transformation
+            Redefining Healthcare with Innovation <br /> Technology & Genuine Care
             </h1>
             <p className="text-lg md:text-xl text-gray-300">
-              Combining cutting-edge AI and innovative technology with trusted
-              human medical expertise—delivering seamless, personalized
-              healthcare designed for everyone.
+            Smart, holistic health solutions for today’s workplaces—empowering
+            people, organizations, and communities to thrive.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
