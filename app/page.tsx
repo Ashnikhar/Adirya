@@ -16,6 +16,7 @@ import DarkVeil from '@/components/darkviel';
 import { HeroScrollDemo } from "@/components/heroscrolldemo"
 import { BentoGridSecondDemo } from "@/components/BentoGridSecondDemo"
 import { SmoothCursor } from "@/components/smooth-cursor"
+import { HomeAbout } from "@/components/home-about"
 
 
 
@@ -28,9 +29,10 @@ export default function HomePage() {
     <div className="min-h-screen bg-black text-white">
       <Header />
       <HeroSection />
+      <HomeAbout />
 
 
-      <CTASection />
+     
       <MarqueeDemo />
       <HeroScrollDemo />
       <BentoGridSecondDemo />
@@ -41,15 +43,16 @@ export default function HomePage() {
       {/* <Globe/> */}
 
       {/* <PartnersSection /> */}
-      <HealthcareAccessSection />
-      <EarlyDetectionSection />
-      <VirtualDemandSection />
-      <ProductsSection />
+      {/* <HealthcareAccessSection /> */}
+      {/* <EarlyDetectionSection /> */}
+      {/* <VirtualDemandSection /> */}
+      {/* <ProductsSection /> */}
       <ImpactSection />
       <IndustrySection />
       <BusinessSection />
       <MediaSection />
       <TestimonialsSection />
+       <CTASection />
       <Footer />
       {/* <SmoothCursor/> */}
     </div>

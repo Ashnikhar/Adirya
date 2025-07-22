@@ -6,7 +6,7 @@ export function BentoGridSecondDemo() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-16">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-white">
-        Our Healthcare Advantages
+        Explore Our Offerings 
       </h2>
       <BentoGrid className="md:auto-rows-[22rem] gap-6">
         {items.map((item, i) => (
@@ -58,30 +58,30 @@ const BackgroundCard = ({
 
 const items = [
   {
-    title: "Access to Best Healthcare",
+    title: "Corporate Wellness Programs",
     description:
-      "We are transforming healthcare by combining cutting-edge AI technology with trusted human medical expertise. Our platform delivers seamless, personalized healthcare solutions designed for everyone, making quality healthcare more accessible than ever before..",
+      "Adriya promotes healthier living through health risk assessments, fun fitness challenges with BMI tracking, personalized lifestyle improvement plans, and regular disease screenings for early detection",
     image: "face.webp",
     className: "md:col-span-2",
   },
   {
-    title: "Early Detection & Monitoring",
+    title: "Workplace Mental Health ",
     description:
-      "Our advanced AI algorithms enable early detection of health conditions through continuous monitoring and analysis. By identifying potential health issues before they become serious, we help prevent complications and improve patient outcomes.",
+      "Our mental health programs include stress management workshops, emotional wellness counseling, HR sensitization sessions, and 24/7 confidential telephonic support accessible to all",
     image: "wear.webp",
     className: "md:col-span-1",
   },
   {
-    title: "Virtual Demand for Scalable AI",
+    title: " Nutrition & Sleep ",
     description:
-      "The growing demand for virtual healthcare solutions has accelerated the need for scalable AI-powered platforms. Our technology meets this demand by providing robust, scalable solutions that can adapt to various healthcare environments and requirements.",
+      "Adriya encourages better daily habits with expert diet counseling, live healthy cooking demos, practical sleep management tools, and helpful resources for those with irregular routines.",
     image: "image.jpg",
     className: "md:col-span-1",
   },
   {
-    title: "AI-Driven Care Personalization",
+    title: "Specialized Programs",
     description:
-      "Tailored healthcare experiences using AI to improve engagement and outcomes.rom telemedicine to remote patient monitoring, our AI solutions are designed to scale with your healthcare organization's needs while maintaining the highest standards of care.",
+      "Adriya offers wellness programs for everyone, including pregnancy and parenting workshops, smoking cessation and road safety campaigns, along with guidance on sleep and maternity care for a healthier lifestyle.",
     image: "voice.webp",
     className: "md:col-span-2",
   },
