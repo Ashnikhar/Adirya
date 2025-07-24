@@ -1,64 +1,82 @@
 "use client"
 
-import { Canvas, useFrame } from "@react-three/fiber"
-import { Torus } from "@react-three/drei"
+import { motion } from "framer-motion"
+import { useInView } from "framer-motion"
 import { useRef } from "react"
-import type { Mesh } from "three"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { ArrowRight } from "lucide-react"
 
-function AnimatedTorus() {
-  const meshRef = useRef<Mesh>(null)
-
-  useFrame(() => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x += 0.01
-      meshRef.current.rotation.y += 0.02
-    }
-  })
+export default function AboutProgressSection() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <Torus args={[1, 0.3, 16, 100]} ref={meshRef}>
-      <meshStandardMaterial color="#008080" />
-    </Torus>
-  )
-}
-
-export function AboutProgressSection() {
-  return (
-    <section className="relative py-20 bg-black overflow-hidden">
-      {/* 3D Background */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 opacity-20">
-        <Canvas camera={{ position: [0, 0, 3], fov: 75 }}>
-          <ambientLight intensity={0.5} />
-          <pointLight position={[5, 5, 5]} intensity={1} />
-          <AnimatedTorus />
-        </Canvas>
+    <section
+      ref={ref}
+      className=" max-w-full py-20 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden"
+    >
+      {/* Background effects */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-teal-500/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4">
-        <div className="max-w-4xl">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            <span className="text-[#008080]">We've made</span> first progress so far
-          </h2>
-          <p className="text-gray-300 text-lg leading-relaxed mb-8">
-            Our journey in revolutionizing healthcare through AI has achieved significant milestones. From our initial
-            research and development phase to deploying solutions across multiple healthcare systems, we've consistently
-            pushed the boundaries of what's possible in medical technology.
-          </p>
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="bg-gray-900 p-6 rounded-xl">
-              <h3 className="text-[#008080] text-xl font-bold mb-3">Research & Development</h3>
-              <p className="text-gray-400">
-                Advanced AI algorithms developed in collaboration with leading medical institutions and research
-                centers.
-              </p>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              We've made <br />
+              <span className="text-teal-400">it our business so far</span>
+            </h2>
+            <p className="text-gray-300 text-lg leading-relaxed mb-8">
+              Our cutting-edge technology solutions are designed to meet the evolving needs of modern healthcare. We
+              leverage artificial intelligence, machine learning, and advanced analytics to deliver unprecedented
+              results.
+            </p>
+            <Button className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-full">
+              Explore Technology <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
+          >
+            <div className="relative h-96 rounded-lg overflow-hidden">
+              <Image
+                src="/placeholder.svg?height=400&width=600"
+                alt="Advanced medical technology"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent" />
             </div>
-            <div className="bg-gray-900 p-6 rounded-xl">
-              <h3 className="text-[#008080] text-xl font-bold mb-3">Clinical Validation</h3>
-              <p className="text-gray-400">
-                Rigorous testing and validation across multiple healthcare environments to ensure safety and efficacy.
-              </p>
-            </div>
-          </div>
+
+            {/* Floating elements */}
+            <motion.div
+              className="absolute -top-4 -right-4 w-20 h-20 bg-teal-500/30 rounded-full blur-xl"
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.3, 0.6, 0.3],
+              }}
+              transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
+            />
+            <motion.div
+              className="absolute -bottom-4 -left-4 w-16 h-16 bg-cyan-500/30 rounded-full blur-xl"
+              animate={{
+                scale: [1.2, 1, 1.2],
+                opacity: [0.6, 0.3, 0.6],
+              }}
+              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+            />
+          </motion.div>
         </div>
       </div>
     </section>

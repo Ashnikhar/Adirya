@@ -1,71 +1,67 @@
 'use client'
 
-import { motion, useScroll, useTransform, useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Image from 'next/image'
 
-export default function AboutSection() {
-  const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: true })
-  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end start'] })
-  const scale = useTransform(scrollYProgress, [0, 1], [1.1, 0.95])
+export default function AboutUsSection() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
     <section
-      ref={sectionRef}
-      className="relative py-28 bg-gradient-to-br from-gray-950 via-gray-900 to-black overflow-hidden text-white"
+      ref={ref}
+      className="max-w-full mx-auto flex flex-col md:flex-row items-center py-28 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden text-white"
+      style={{ minHeight: '600px' }}
     >
-      {/* Background Pattern Overlay */}
-      <div className="absolute inset-0 pointer-events-none opacity-10 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-teal-500/20 to-cyan-500/20" />
+      {/* Left Image */}
+      <div className="relative w-full md:w-1/2 h-[400px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl flex-shrink-0">
+        <Image
+          src="pic-1.jpg" // Replace with your image path
+          alt="Adirya Holistic Health"
+          fill
+          className="object-cover"
+          priority
+        />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Textual Narrative */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-              About Us
-            </h2>
+      {/* Right Content */}
+      <motion.div
+        initial={{ opacity: 0, x: 40 }}
+        animate={isInView ? { opacity: 1, x: 0 } : {}}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="mt-10 md:mt-0 md:w-1/2 md:pl-16 max-w-xl"
+      >
+        {/* Subtitle */}
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="text-teal-400 uppercase tracking-widest font-semibold mb-3"
+        >
+          About Us
+        </motion.h3>
 
-            <div className="space-y-5 text-lg text-gray-300 leading-relaxed">
-              <p>
-                Since <span className="text-white font-semibold">2014</span>, Adirya Holistic Health has been quietly transforming how organizations think about health at work. We believe well-being should be more than a corporate checkbox — it should feel real, relevant, and woven into the daily rhythm of business.
-              </p>
+        {/* Headline */}
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="text-4xl md:text-5xl font-extrabold leading-tight mb-8 bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent"
+        >
+          Since 2014, Pioneering Healthier, More Engaged Workplaces
+        </motion.h2>
 
-              <p>
-                Our interdisciplinary team — drawn from <span className="text-white font-semibold">medicine</span>, <span className="text-white font-semibold">psychology</span>, <span className="text-white font-semibold">HR</span>, and <span className="text-white font-semibold">technology</span> — works together to design preventive health programs that are both evidence-based and deeply human.
-              </p>
-
-              <p>
-                Over the past decade, we’ve partnered with organizations of every size — from global enterprises to grassroots initiatives — and supported over <span className="text-cyan-400 font-bold">1,50,000 employees</span> across India.
-              </p>
-
-              <p>
-                Our mission remains consistent: to help workplaces not just function, but flourish, by making well-being a cultural norm.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Image with Scroll Scale Animation */}
-          <motion.div
-            style={{ scale }}
-            className="relative h-[420px] w-full rounded-2xl overflow-hidden shadow-2xl"
-          >
-            <Image
-              src="./public/pic-1.jpg" // Replace with your actual image
-              alt="Adirya Holistic Health Impact"
-              fill
-              className="object-cover"
-              priority
-            />
-          </motion.div>
-        </div>
-      </div>
+        {/* Body Text */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 1, delay: 0.6 }}
+          className="text-gray-300 text-lg leading-relaxed"
+        >
+          Our team unites experts in medicine, psychology, HR, and technology to design preventive healthcare programs and technology that are practical, relevant, and not just another checklist item. Over the last decade, we’ve supported more than <span className="text-cyan-400 font-semibold">150,000 employees</span> across diverse industries in India — helping make health and well-being an everyday part of work culture.
+        </motion.p>
+      </motion.div>
     </section>
   )
 }
