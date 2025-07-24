@@ -12,35 +12,40 @@ export default function AboutProgressSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
+
     <section
       ref={ref}
-      className=" max-w-full py-20 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden"
+      className="mx-auto max-w-full py-20 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden"
     >
+
       {/* Background effects */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-teal-500/20 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      {/* <div className="container mx-auto px-4 relative z-10"> */}
+      <div className="mx-auto max-w-[1250px] px-4 relative z-10">
+
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              We've made <br />
-              <span className="text-teal-400">it our business so far</span>
-            </h2>
-            <p className="text-gray-300 text-lg leading-relaxed mb-8">
-              Our cutting-edge technology solutions are designed to meet the evolving needs of modern healthcare. We
-              leverage artificial intelligence, machine learning, and advanced analytics to deliver unprecedented
-              results.
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-white leading-tight">
+          <span className="block"></span>
+          <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+            Why Are We Here ?
+          </span>
+        </h1>
+
+            <p className="text-gray-300 text-[15px] leading-relaxed mb-8">
+              Our mission is straightforward, to help companies create environments where people can take charge of their health and feel personally supported.
+              Health and wellness today needs more than traditional interventions. It also requires real-time insights, behavioural science, and technology that make data and solutions accessible. We include and use AI tools and simple tracking systems with evidence-based programs so you can see meaningful outcomes over time, at any point in time.
+
             </p>
-            <Button className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-full">
-              Explore Technology <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            
           </motion.div>
 
           <motion.div
@@ -51,7 +56,7 @@ export default function AboutProgressSection() {
           >
             <div className="relative h-96 rounded-lg overflow-hidden">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="pic-1.jpg"
                 alt="Advanced medical technology"
                 fill
                 className="object-cover"

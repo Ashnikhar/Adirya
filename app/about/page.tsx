@@ -4,12 +4,13 @@ import {AboutHeroSection} from "@/components/about/about-hero-section"
 import AboutStorySection from "@/components/about/about-story-section"
 import { AboutIndustrySection } from "@/components/about/about-industry-section"
 import  AboutProgressSection  from "@/components/about/about-progress-section"
-import { AboutMissionSection } from "@/components/about/about-mission-section"
 import  AboutImpactSection  from "@/components/about/about-impact-section"
 import { AboutTeamSection } from "@/components/about/about-team-section"
 import { AboutResponsibilitySection } from "@/components/about/about-responsibility-section"
 import { AboutLeadershipSection } from "@/components/about/about-leadership-section"
-import { AboutAdvisorySection } from "@/components/about/about-advisory-section"
+import  AboutAdvisorySection from "@/components/about/about-advisory-section"
+import  AboutCTASection  from "@/components/about/about-cta-section"
+import { CTASection } from "@/components/sections/cta-section"
 
 export default function AboutPage() {
   return (
@@ -17,14 +18,13 @@ export default function AboutPage() {
       <Header />
       <AboutHeroSection />
       <AboutStorySection />
-      <AboutIndustrySection />
       <AboutProgressSection />
-      <AboutMissionSection />
+      {/* <AboutResponsibilitySection /> */}
       <AboutImpactSection />
-      <AboutTeamSection />
-      <AboutResponsibilitySection />
+      <AboutAdvisorySection/>
       <AboutLeadershipSection />
-      <AboutAdvisorySection />
+      {/* <AboutIndustrySection /> */}
+      <AboutCTASection />
       <Footer />
     </div>
   )
