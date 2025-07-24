@@ -17,9 +17,7 @@ import { HeroScrollDemo } from "@/components/heroscrolldemo"
 import { BentoGridSecondDemo } from "@/components/BentoGridSecondDemo"
 import { SmoothCursor } from "@/components/smooth-cursor"
 import { HomeAbout } from "@/components/home-about"
-
-
-
+import IndiaPresence from "@/components/IndiaPresence"
 
 
 // import { Globe } from "@/components/globe"
@@ -33,9 +31,14 @@ export default function HomePage() {
 
 
 
+
       <MarqueeDemo />
+
       <HeroScrollDemo />
+
+
       <BentoGridSecondDemo />
+
 
 
 
@@ -47,11 +50,12 @@ export default function HomePage() {
       {/* <EarlyDetectionSection /> */}
       {/* <VirtualDemandSection /> */}
       {/* <ProductsSection /> */}
-      <ImpactSection />
+      {/* <ImpactSection /> */}
       <IndustrySection />
       <BusinessSection />
       <MediaSection />
       <TestimonialsSection />
+      <IndiaPresence />
       <CTASection />
       <Footer />
       {/* <SmoothCursor/> */}
