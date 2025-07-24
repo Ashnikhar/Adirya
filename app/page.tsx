@@ -1,11 +1,6 @@
 import { Header } from "@/components/header"
 import HeroSection from "@/components/sections/hero-section"
-import { PartnersSection } from "@/components/sections/partners-section"
-import { HealthcareAccessSection } from "@/components/sections/healthcare-access-section"
-import { EarlyDetectionSection } from "@/components/sections/early-detection-section"
-import { VirtualDemandSection } from "@/components/sections/virtual-demand-section"
-import { ProductsSection } from "@/components/sections/products-section"
-import { ImpactSection } from "@/components/sections/impact-section"
+
 import { IndustrySection } from "@/components/sections/industry-section"
 import { BusinessSection } from "@/components/sections/business-section"
 import { MediaSection } from "@/components/sections/media-section"
@@ -18,6 +13,9 @@ import { BentoGridSecondDemo } from "@/components/BentoGridSecondDemo"
 import { SmoothCursor } from "@/components/smooth-cursor"
 import { HomeAbout } from "@/components/home-about"
 import IndiaPresence from "@/components/IndiaPresence"
+import { TypewriterEffectDemo } from "@/components/TypewriterEffectDemo"
+
+import WellnessHighlights  from "@/components/WellnessHighlights"
 
 
 // import { Globe } from "@/components/globe"
@@ -28,7 +26,7 @@ export default function HomePage() {
       <Header />
       <HeroSection />
       <HomeAbout />
-
+     
 
 
 
@@ -45,18 +43,19 @@ export default function HomePage() {
 
       {/* <Globe/> */}
 
-      {/* <PartnersSection /> */}
-      {/* <HealthcareAccessSection /> */}
-      {/* <EarlyDetectionSection /> */}
-      {/* <VirtualDemandSection /> */}
+     
+    
       {/* <ProductsSection /> */}
       {/* <ImpactSection /> */}
+      {/* <WellnessHighlights /> */}
       <IndustrySection />
-      <BusinessSection />
+      {/* <BusinessSection /> */}
       <MediaSection />
       <TestimonialsSection />
       <IndiaPresence />
-      <CTASection />
+      <TypewriterEffectDemo />
+    
+      {/* <CTASection /> */}
       <Footer />
       {/* <SmoothCursor/> */}
     </div>
