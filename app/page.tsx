@@ -14,8 +14,11 @@ import { SmoothCursor } from "@/components/smooth-cursor"
 import { HomeAbout } from "@/components/home-about"
 import IndiaPresence from "@/components/IndiaPresence"
 import { TypewriterEffectDemo } from "@/components/TypewriterEffectDemo"
+import { Iphone15Pro } from "@/components/magicui/Iphone15Pro";
+import  AdiryacareSection from "@/components/AdiryacareSection"
 
-import WellnessHighlights  from "@/components/WellnessHighlights"
+
+import { WellnessHighlights } from "@/components/WellnessHighlights"
 
 
 // import { Globe } from "@/components/globe"
@@ -26,35 +29,32 @@ export default function HomePage() {
       <Header />
       <HeroSection />
       <HomeAbout />
+      {/* <Iphone15Pro /> */}
      
-
-
+   
 
       <MarqueeDemo />
 
       <HeroScrollDemo />
-
+      <IndustrySection />
 
       <BentoGridSecondDemo />
 
-
-
-
-
       {/* <Globe/> */}
 
-     
-    
       {/* <ProductsSection /> */}
       {/* <ImpactSection /> */}
       {/* <WellnessHighlights /> */}
-      <IndustrySection />
-      {/* <BusinessSection /> */}
-      <MediaSection />
-      <TestimonialsSection />
+        {/* <AdiryacareSection /> */}
+
+      <BusinessSection />
+   
+       
+      {/* <MediaSection /> */}
+      {/* <TestimonialsSection /> */}
       <IndiaPresence />
       <TypewriterEffectDemo />
-    
+
       {/* <CTASection /> */}
       <Footer />
       {/* <SmoothCursor/> */}
