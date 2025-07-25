@@ -26,7 +26,7 @@ export function HeroScrollDemo() {
         }
       >
         <img
-          src={`/face.webp`}
+          src={`wmremove-transformed.jpeg`} // Replace with real media
           alt="hero"
           height={500}
           width={900}
