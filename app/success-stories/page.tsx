@@ -6,17 +6,23 @@ import { SuccessInsuranceSection } from "@/components/success/success-insurance-
 import { SuccessFinanceSection } from "@/components/success/success-finance-section"
 import { SuccessTestimonialsSection } from "@/components/success/success-testimonials-section"
 import { SuccessCTASection } from "@/components/success/success-cta-section"
+import SolutionsSection from "@/components/SolutionsSection";
+import { TypewriterEffectDemo } from "@/components/TypewriterEffectDemo";
 
 export default function SuccessStoriesPage() {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Header />
-      <SuccessHeroSection />
-      <SuccessCaseStudySection />
-      <SuccessInsuranceSection />
-      <SuccessFinanceSection />
-      <SuccessTestimonialsSection />
-      <SuccessCTASection />
+       <Header />
+      <div className="pt-24"> {/* Add this wrapper with padding top */}
+        {/* <SuccessHeroSection /> */}
+        {/* <SuccessCaseStudySection /> */}
+        {/* <SuccessInsuranceSection /> */}
+        {/* <SuccessFinanceSection /> */}
+        {/* <SuccessTestimonialsSection /> */}
+        <SolutionsSection />
+        {/* <SuccessCTASection /> */}
+        <TypewriterEffectDemo />
+      </div>
       <Footer />
     </div>
   )

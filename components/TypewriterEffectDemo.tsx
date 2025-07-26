@@ -23,7 +23,7 @@ export function TypewriterEffectDemo() {
   return (
     <div className="flex flex-col items-center justify-center h-[40rem]  bg-gradient-to-b from-white to-blue-50 dark:from-black dark:to-blue-900 text-center px-4">
       <p className="text-neutral-600 dark:text-neutral-200 text-base  mb-10">
-        The road to freedom starts from here
+        Let’s Build a Healthier Way Forward
       </p>
       <TypewriterEffectSmooth words={words} />
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 mt-10">
