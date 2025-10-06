@@ -94,21 +94,34 @@ export default function DarkVeil({
   resolutionScale = 1,
 }: Props) {
   const ref = useRef<HTMLCanvasElement>(null);
+
   useEffect(() => {
-    const canvas = ref.current as HTMLCanvasElement;
-    const parent = canvas.parentElement as HTMLElement;
+    const canvas = ref.current;
+    if (!canvas) {
+      console.error("Canvas element not found.");
+      return;
+    }
+
+    const parent = canvas.parentElement;
+    if (!parent) {
+      console.error("Canvas parent element not found.");
+      return;
+    }
 
     const renderer = new Renderer({
       dpr: Math.min(window.devicePixelRatio, 2),
       canvas,
     });
-
     const gl = renderer.gl;
+
     const geometry = new Triangle(gl);
 
+    // Assuming 'vertex' and 'fragment' are imported or defined elsewhere
+    // For example: import vertex from './shaders/vertex.glsl';
+    // import fragment from './shaders/fragment.glsl';
     const program = new Program(gl, {
-      vertex,
-      fragment,
+      vertex, // Make sure 'vertex' shader code is defined/imported
+      fragment, // Make sure 'fragment' shader code is defined/imported
       uniforms: {
         uTime: { value: 0 },
         uResolution: { value: new Vec2() },
@@ -123,35 +136,39 @@ export default function DarkVeil({
     const mesh = new Mesh(gl, { geometry, program });
 
     const resize = () => {
-      const w = parent.clientWidth,
-        h = parent.clientHeight;
+      const w = parent.clientWidth;
+      const h = parent.clientHeight;
       renderer.setSize(w * resolutionScale, h * resolutionScale);
       program.uniforms.uResolution.value.set(w, h);
     };
 
     window.addEventListener("resize", resize);
-    resize();
+    resize(); // Initial resize call
 
-    const start = performance.now();
-    let frame = 0;
+    const startTime = performance.now();
+    let animationFrameId: number; // Renamed 'frame' to 'animationFrameId' for clarity
 
     const loop = () => {
       program.uniforms.uTime.value =
-        ((performance.now() - start) / 1000) * speed;
+        ((performance.now() - startTime) / 1000) * speed;
+      // Update uniforms with current prop values on each frame
       program.uniforms.uHueShift.value = hueShift;
       program.uniforms.uNoise.value = noiseIntensity;
       program.uniforms.uScan.value = scanlineIntensity;
       program.uniforms.uScanFreq.value = scanlineFrequency;
       program.uniforms.uWarp.value = warpAmount;
+
       renderer.render({ scene: mesh });
-      frame = requestAnimationFrame(loop);
+      animationFrameId = requestAnimationFrame(loop);
     };
 
-    loop();
+    loop(); // Start the animation loop
 
+    // Cleanup function
     return () => {
-      cancelAnimationFrame(frame);
+      cancelAnimationFrame(animationFrameId);
       window.removeEventListener("resize", resize);
+      // OGL classes do not have destroy methods, so nothing else to clean up
     };
   }, [
     hueShift,
@@ -161,7 +178,8 @@ export default function DarkVeil({
     scanlineFrequency,
     warpAmount,
     resolutionScale,
-  ]);
+  ]); // Dependencies for useEffect
+
   return (
     <canvas
       ref={ref}
